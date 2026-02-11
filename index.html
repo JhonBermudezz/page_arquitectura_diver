@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio arquitectónico de Diver Quiceno - Arquitectura, Renderizado 3D y Visualización">
+    <title>Diver Quiceno | Portafolio Arquitectónico</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader" aria-hidden="true">
+        <div class="loader__content">
+            <img src="Gemini_Generated_Image_c1mddqc1mddqc1md.png" alt="" class="loader__logo" width="320" height="213">
+            <div class="loader__bar">
+                <div class="loader__progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nav: absoluto, solo sobre el hero -->
+    <nav class="nav" aria-label="Navegación principal">
+        <a href="#hero" class="nav__logo">
+            <img src="Gemini_Generated_Image_c1mddqc1mddqc1md.png" alt="Diver Quiceno" width="120" height="80">
+        </a>
+        <button class="nav__burger" aria-label="Abrir menú" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav__overlay"></div>
+        <ul class="nav__menu">
+            <li><span class="nav__menu-num">01</span><a href="#hero">Inicio</a></li>
+            <li><span class="nav__menu-num">02</span><a href="#perfil">Perfil</a></li>
+            <li><span class="nav__menu-num">03</span><a href="#contenido">Proyectos</a></li>
+            <li><span class="nav__menu-num">04</span><a href="#servicios">Servicios</a></li>
+            <li><span class="nav__menu-num">05</span><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Hero -->
+        <section id="hero" class="hero" aria-labelledby="hero-title">
+            <video class="hero__video" autoplay muted loop playsinline preload="auto">
+                <source src="ezgif-7b5f8e791b864392.mp4" type="video/mp4">
+            </video>
+            <div class="hero__overlay"></div>
+            <div class="hero__content">
+                <h1 id="hero-title" class="hero__title">PORTAFOLIO<br>ARQUITECTÓNICO</h1>
+                <p class="hero__subtitle">DIVER QUICENO</p>
+                <p class="hero__tagline">Arquitectura &bull; Renderizado 3D &bull; Visualización</p>
+            </div>
+            <div class="hero__scroll-indicator">
+                <span>Scroll</span>
+                <div class="hero__scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Marquee -->
+        <div class="marquee">
+            <div class="marquee__inner">
+                <span class="marquee__text">Arquitectura</span>
+                <span class="marquee__separator">&bull;</span>
+                <span class="marquee__text marquee__text--outline">Renderizado 3D</span>
+                <span class="marquee__separator">&bull;</span>
+                <span class="marquee__text">Visualización</span>
+                <span class="marquee__separator">&bull;</span>
+                <span class="marquee__text marquee__text--outline">Diseño</span>
+                <span class="marquee__separator">&bull;</span>
+                <span class="marquee__text">Arquitectura</span>
+                <span class="marquee__separator">&bull;</span>
+                <span class="marquee__text marquee__text--outline">Renderizado 3D</span>
+                <span class="marquee__separator">&bull;</span>
+                <span class="marquee__text">Visualización</span>
+                <span class="marquee__separator">&bull;</span>
+                <span class="marquee__text marquee__text--outline">Diseño</span>
+                <span class="marquee__separator">&bull;</span>
+            </div>
+        </div>
+
+        <!-- Perfil -->
+        <section id="perfil" class="perfil section">
+            <div class="container">
+                <div class="perfil__intro">
+                    <h2 class="big-text reveal-item">Transformo ideas</h2>
+                    <h2 class="big-text big-text--outline reveal-item">en espacios</h2>
+                    <h2 class="big-text big-text--gold reveal-item">reales.</h2>
+                </div>
+            </div>
+            <div class="perfil__grid container">
+                <div class="perfil__col perfil__col--left">
+                    <div class="perfil__photo-wrap reveal-item">
+                        <img src="Captura%20de%20pantalla%202026-02-10%20175856.png" alt="Diver Quiceno" class="perfil__photo" width="320" height="320">
+                    </div>
+                    <div class="perfil__info reveal-item">
+                        <h2 class="section__title section__title--gold">PERFIL</h2>
+                        <p class="perfil__text">Hola soy Diver Quiceno, Estudiante de 8vo semestre de arquitectura en la Universidad Antonio Nariño Villavicencio.</p>
+                        <p class="perfil__quote">Transformo diseños arquitectónicos en visualizaciones realistas.</p>
+                    </div>
+                </div>
+                <div class="perfil__col perfil__col--right">
+                    <h2 class="section__title section__title--gold reveal-item">HABILIDADES TÉCNICAS</h2>
+                    <ul class="skills-list">
+                        <li class="skill-item reveal-item">
+                            <div class="skill-header"><span class="skill-name">SketchUp</span></div>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
+                        </li>
+                        <li class="skill-item reveal-item">
+                            <div class="skill-header"><span class="skill-name">D5 Render</span></div>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+                        </li>
+                        <li class="skill-item reveal-item">
+                            <div class="skill-header"><span class="skill-name">AutoCAD</span></div>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
+                        </li>
+                        <li class="skill-item reveal-item">
+                            <div class="skill-header"><span class="skill-name">Photoshop</span></div>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="75"></div></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios -->
+        <section id="servicios" class="servicios section">
+            <div class="container">
+                <h2 class="section__title section__title--center section__title--gold reveal-item">SERVICIOS</h2>
+                <div class="servicios__grid">
+                    <article class="servicio-card reveal-item">
+                        <span class="servicio-card__num">01</span>
+                        <h3>Renderizado 3D</h3>
+                        <p>Visualizaciones fotorrealistas de proyectos arquitectónicos.</p>
+                    </article>
+                    <article class="servicio-card reveal-item">
+                        <span class="servicio-card__num">02</span>
+                        <h3>Diseño Arquitectónico</h3>
+                        <p>Desarrollo conceptual y técnico de proyectos residenciales.</p>
+                    </article>
+                    <article class="servicio-card reveal-item">
+                        <span class="servicio-card__num">03</span>
+                        <h3>Visualización</h3>
+                        <p>Representaciones que facilitan la venta y validación de diseños.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proyectos -->
+        <section id="contenido" class="contenido section">
+            <div class="container">
+                <p class="section__overtitle reveal-item">SELECCIÓN DE OBRAS</p>
+                <h2 class="section__title section__title--center reveal-item">Portafolio Reciente</h2>
+                <div class="proyectos-grid">
+                    <article class="proyecto-card proyecto-card--large reveal-item"
+                        data-img="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=800&fit=crop"
+                        data-num="01"
+                        data-title="Cero"
+                        data-desc="Residencia unifamiliar minimalista enfocada en la integración con el entorno natural. Diseño que prioriza la luz natural, ventilación cruzada y materiales nobles que dialogan con el paisaje circundante.">
+                        <div class="proyecto-card__link">
+                            <div class="proyecto-card__media">
+                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop" alt="Proyecto Cero">
+                            </div>
+                            <div class="proyecto-card__content">
+                                <span class="proyecto-card__num">01</span>
+                                <h3 class="proyecto-card__title">Cero</h3>
+                                <p class="proyecto-card__desc">Residencia unifamiliar minimalista enfocada en la integración con el entorno natural.</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="proyecto-card reveal-item"
+                        data-img="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&h=800&fit=crop"
+                        data-num="02"
+                        data-title="La Diada"
+                        data-desc="Complejo habitacional integrado con la naturaleza circundante y luz cenital. Espacios comunes diseñados para fomentar la convivencia y el contacto con áreas verdes.">
+                        <div class="proyecto-card__link">
+                            <div class="proyecto-card__media">
+                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop" alt="Proyecto La Diada">
+                            </div>
+                            <div class="proyecto-card__content">
+                                <span class="proyecto-card__num">02</span>
+                                <h3 class="proyecto-card__title">La Diada</h3>
+                                <p class="proyecto-card__desc">Complejo habitacional integrado con la naturaleza circundante y luz cenital.</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="proyecto-card reveal-item"
+                        data-img="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&h=800&fit=crop"
+                        data-num="03"
+                        data-title="Nexus"
+                        data-desc="Centro cultural urbano diseñado bajo principios de arquitectura paramétrica. Estructura innovadora que combina tecnología y arte en un espacio público abierto a la comunidad.">
+                        <div class="proyecto-card__link">
+                            <div class="proyecto-card__media">
+                                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop" alt="Proyecto Nexus">
+                            </div>
+                            <div class="proyecto-card__content">
+                                <span class="proyecto-card__num">03</span>
+                                <h3 class="proyecto-card__title">Nexus</h3>
+                                <p class="proyecto-card__desc">Centro cultural urbano diseñado bajo principios de arquitectura paramétrica.</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="proyecto-card proyecto-card--large reveal-item"
+                        data-img="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&h=800&fit=crop"
+                        data-num="04"
+                        data-title="Aurea"
+                        data-desc="Rediseño y diseño interior de espacios gastronómicos de alta gama. Ambiente cálido con iluminación estratégica que realza la experiencia del comensal.">
+                        <div class="proyecto-card__link">
+                            <div class="proyecto-card__media">
+                                <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop" alt="Proyecto Aurea">
+                            </div>
+                            <div class="proyecto-card__content">
+                                <span class="proyecto-card__num">04</span>
+                                <h3 class="proyecto-card__title">Aurea</h3>
+                                <p class="proyecto-card__desc">Rediseño y diseño interior de espacios gastronómicos de alta gama.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" class="contacto section">
+            <div class="container">
+                <div class="contacto__layout">
+                    <div class="contacto__texto">
+                        <h2 class="contacto__title reveal-item">Trabajemos <span class="contacto__accent">juntos</span></h2>
+                        <p class="contacto__desc reveal-item">Tengo la capacidad de tus modelos 3D e ideas en representaciones visuales fotorrealistas, no solo facilitando la venta y atracción de clientes al permitirles visualizar el proyecto como si ya existiera, sino que también sirve como herramienta para la validación de un diseño ya que permite identificar errores, texturas, materiales antes de la fase de construcción.</p>
+                        <div class="contacto__social reveal-item">
+                            <a href="mailto:dquiceno80@uan.edu.co" class="contacto__link" aria-label="Correo">dquiceno80@uan.edu.co</a>
+                            <a href="https://wa.me/573144336938" target="_blank" rel="noopener noreferrer" class="contacto__link" aria-label="WhatsApp">3144336938</a>
+                            <a href="https://instagram.com/diver_camilo" target="_blank" rel="noopener noreferrer" class="contacto__link" aria-label="Instagram">@diver_camilo</a>
+                        </div>
+                    </div>
+                    <form class="contacto__form reveal-item" action="#" method="POST">
+                        <input type="text" name="nombre" placeholder="Nombre" required aria-label="Nombre">
+                        <input type="email" name="email" placeholder="Correo electrónico" required aria-label="Correo electrónico">
+                        <textarea name="mensaje" placeholder="Mensaje" rows="4" required aria-label="Mensaje"></textarea>
+                        <button type="submit" class="contacto__btn">Enviar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="floating-btns">
+                <a href="https://wa.me/573144336938" class="floating-btn floating-btn--wa" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </a>
+                <a href="mailto:dquiceno80@uan.edu.co" class="floating-btn floating-btn--mail" aria-label="Correo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </a>
+                <a href="https://instagram.com/diver_camilo" class="floating-btn floating-btn--ig" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para proyectos -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal">
+            <button class="modal__close" aria-label="Cerrar">&times;</button>
+            <img class="modal__img" id="modalImg" src="" alt="">
+            <div class="modal__body">
+                <span class="modal__num" id="modalNum"></span>
+                <h3 class="modal__title" id="modalTitle"></h3>
+                <p class="modal__desc" id="modalDesc"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <img src="Gemini_Generated_Image_c1mddqc1mddqc1md.png" alt="Diver Quiceno" class="footer__logo" width="100" height="67">
+        <p class="footer__text">&copy; <span id="year"></span> Diver Quiceno &mdash; Creado por <a href="https://jhondeveloper.com/" target="_blank" rel="noopener noreferrer" style="color: var(--color-gold); text-decoration: none;">jhondeveloper.com</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
