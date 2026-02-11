@@ -73,21 +73,94 @@ function animateHeroEntrance() {
 }
 
 /**
- * HERO - Parallax al scroll
+ * HERO - Scroll-driven con frames en canvas
  */
 function initHeroAnimations() {
+    const canvas = document.getElementById('heroCanvas');
+    const hero = document.getElementById('hero');
     const heroContent = document.querySelector('.hero__content');
     const heroOverlay = document.querySelector('.hero__overlay');
+    if (!canvas || !hero) return;
 
+    const ctx = canvas.getContext('2d');
+    const FRAME_COUNT = 64;
+    const FRAME_PATH = 'ezgif-7b5f8e791b864392_frames (1)/ezgif-7b5f8e791b864392_frames/ezgif-7b5f8e791b864392_';
+    const frames = [];
+    let loadedCount = 0;
+    let currentFrame = 0;
+
+    // Resize canvas al tamaño de la ventana
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        drawFrame(currentFrame);
+    }
+
+    // Dibujar un frame en el canvas (cover fit)
+    function drawFrame(index) {
+        const img = frames[index];
+        if (!img || !img.complete) return;
+
+        const cw = canvas.width;
+        const ch = canvas.height;
+        const iw = img.naturalWidth;
+        const ih = img.naturalHeight;
+
+        // Cover fit
+        const scale = Math.max(cw / iw, ch / ih);
+        const w = iw * scale;
+        const h = ih * scale;
+        const x = (cw - w) / 2;
+        const y = (ch - h) / 2;
+
+        ctx.clearRect(0, 0, cw, ch);
+        ctx.drawImage(img, x, y, w, h);
+    }
+
+    // Precargar todos los frames
+    for (let i = 1; i <= FRAME_COUNT; i++) {
+        const img = new Image();
+        img.src = FRAME_PATH + String(i).padStart(3, '0') + '.png';
+        img.onload = () => {
+            loadedCount++;
+            if (loadedCount === FRAME_COUNT) {
+                resizeCanvas();
+                ScrollTrigger.refresh();
+            }
+        };
+        frames.push(img);
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+
+    // ScrollTrigger para cambiar frames
+    ScrollTrigger.create({
+        trigger: hero,
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: true,
+        onUpdate: (self) => {
+            const frameIndex = Math.min(
+                FRAME_COUNT - 1,
+                Math.floor(self.progress * FRAME_COUNT)
+            );
+            if (frameIndex !== currentFrame) {
+                currentFrame = frameIndex;
+                drawFrame(currentFrame);
+            }
+        },
+    });
+
+    // Parallax del contenido al scroll
     if (heroContent) {
         gsap.to(heroContent, {
             y: -120,
             opacity: 0,
             ease: 'none',
             scrollTrigger: {
-                trigger: '.hero',
+                trigger: hero,
                 start: 'top top',
-                end: 'bottom top',
+                end: '50% top',
                 scrub: true,
             },
         });
@@ -98,9 +171,9 @@ function initHeroAnimations() {
             opacity: 0.95,
             ease: 'none',
             scrollTrigger: {
-                trigger: '.hero',
-                start: '60% top',
-                end: 'bottom top',
+                trigger: hero,
+                start: '50% top',
+                end: 'bottom bottom',
                 scrub: true,
             },
         });

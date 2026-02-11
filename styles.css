@@ -234,13 +234,18 @@ body {
     font-weight: 400;
 }
 
-/* ============ HERO ============ */
+/* ============ HERO: Scroll-driven frames ============ */
 .hero {
-    height: 100vh;
+    height: 400vh;
     position: relative;
+}
+.hero__sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
     overflow: hidden;
 }
-.hero__video {
+.hero__canvas {
     position: absolute;
     inset: 0;
     width: 100%;

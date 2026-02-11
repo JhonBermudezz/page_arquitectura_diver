@@ -16,5 +16,8 @@ nul
 # Node
 node_modules/
 
+# Archives
+*.zip
+
 # Reference images
 referente*.png

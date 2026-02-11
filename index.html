@@ -45,20 +45,20 @@
     </nav>
 
     <main>
-        <!-- Hero -->
+        <!-- Hero: scroll-driven con frames -->
         <section id="hero" class="hero" aria-labelledby="hero-title">
-            <video class="hero__video" autoplay muted loop playsinline preload="auto">
-                <source src="ezgif-7b5f8e791b864392.mp4" type="video/mp4">
-            </video>
-            <div class="hero__overlay"></div>
-            <div class="hero__content">
-                <h1 id="hero-title" class="hero__title">PORTAFOLIO<br>ARQUITECTÓNICO</h1>
-                <p class="hero__subtitle">DIVER QUICENO</p>
-                <p class="hero__tagline">Arquitectura &bull; Renderizado 3D &bull; Visualización</p>
-            </div>
-            <div class="hero__scroll-indicator">
-                <span>Scroll</span>
-                <div class="hero__scroll-line"></div>
+            <div class="hero__sticky">
+                <canvas class="hero__canvas" id="heroCanvas"></canvas>
+                <div class="hero__overlay"></div>
+                <div class="hero__content">
+                    <h1 id="hero-title" class="hero__title">PORTAFOLIO<br>ARQUITECTÓNICO</h1>
+                    <p class="hero__subtitle">DIVER QUICENO</p>
+                    <p class="hero__tagline">Arquitectura &bull; Renderizado 3D &bull; Visualización</p>
+                </div>
+                <div class="hero__scroll-indicator">
+                    <span>Scroll</span>
+                    <div class="hero__scroll-line"></div>
+                </div>
             </div>
         </section>
 
